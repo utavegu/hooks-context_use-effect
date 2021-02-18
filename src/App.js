@@ -2,29 +2,24 @@
 import './App.css';
 import List from './components/List.jsx';
 import Details from './components/Details.jsx';
+import { useState } from 'react';
 
 function App() {
+  /*
+  1) Проптайпсы
+  2) Прелоадер
+  3) Трай-кэтч
+  4) Внешний вид
+  */
+  const [selectedUser, setSelectedUser] = useState()
+  const handleSelectUser = (data) => {
+    setSelectedUser(data);
+  }
   return (
     <>
-      <List />
-      <Details />
+      <List onSelectUser={handleSelectUser}/>
+      <Details selectedUser={selectedUser}/>
     </>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 

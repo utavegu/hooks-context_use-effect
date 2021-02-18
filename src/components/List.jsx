@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
-function List(props) {
+function List({onSelectUser: handleSelectUser}) {
 
   const USERS = "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/users.json";
 
@@ -21,7 +21,7 @@ function List(props) {
   }, [])
 
   const handleChange = (evt) => {
-    console.log(evt.target.value)
+    handleSelectUser(evt.target.value);
   }
 
   return (
@@ -39,9 +39,9 @@ function List(props) {
   )
 }
 
-// List.propTypes = {
+List.propTypes = {
 
-// }
+}
 
 export default List
 
